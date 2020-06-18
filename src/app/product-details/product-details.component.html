@@ -1,0 +1,71 @@
+<div>
+    <section id="creadcrumb">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
+                    <h3 class="bold subheader-heading">Product Details</h3>
+                    <div class="breadcrumbs" aria-label="Breadcrumb">
+                        <ul>
+                            <li><a href="">Home</a></li>
+                            <li aria-current="page">Product Details</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12">
+                    <div class="row">
+                        <div class="col-md-4 col-sm-6 col-lg-4 col-xs-12">
+                            <div class="sat-div"><img class="sat-img float" src="assets/images/satisfaction/1.png"><span class="sat-span">No Hormones, Steroid’s or Antibiotic Residue</span></div>
+                        </div>
+                        <div class="col-md-4 col-sm-6 col-lg-4 col-xs-12">
+                            <div class="sat-div"><img class="sat-img float" src="assets/images/satisfaction/3.png"><span class="sat-span">Hygienically cleaned<br> and Cut</span></div>
+                        </div>
+                        <div class="col-md-4 col-sm-6 col-lg-4 col-xs-12">
+                            <div class="sat-div"><img class="sat-img float" src="assets/images/satisfaction/2.png"><span class="sat-span">Fresh, Healthy and <br>Tasty</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="product-details">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-5 col-sm-5 col-xs-12">
+                    <div class="product"><img alt="" src="{{productInfo.image_large_details}}" class="img-responsive"></div>
+                </div>
+                <div class="col-md-7 col-sm-7 col-xs-12">
+                    <h3><strong>{{productInfo.name}}</strong></h3>
+                    <!-- <h4>Description</h4> -->
+                    <p>{{productInfo.product_details}}</p>
+                    <p>Product Type:</p>
+                    <p *ngIf="stockCount">Availability: <strong style="color: #111;"> In Stock</strong></p>
+                    <p *ngIf="!stockCount">Availability: <strong style="color: #111;">  Out of Stock</strong></p>
+                    <p>Product Model: <strong style="color: #111;"> {{productInfo.model}} </strong> </p>
+                    <!-- <ul class="product-feature">
+                        <li><img src="images/icons/pieces-icon.png" alt=""> No. of Pieces <strong></strong></li>
+                        </ul> -->
+                    <h2>M.R.P <i class="fa fa-rupee"></i> {{productInfo.price}}</h2>
+                    <div>
+                        <p class="col-2">Qnty: </p>
+                        <button class="col-2 btn btn-secndary" (click)="DecrementQty()">-</button> {{qty}}
+                        <!-- <input type="number" style="height: 30px;padding: 0 20px;text-align: center;" min="1" max="{{stockCount}}" value="{{qty}}"> -->
+                        <button class="col-2 btn btn-secondary" (click)="IncrementQty()">+</button>
+                    </div>
+                    <button class="cart-btn" [disabled]="!stockCount" (click)="AddItemtoCart(productInfo.id,qty)">Add to cart</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="newarrivals">
+        <div class="container">
+            <div class="head navontop text-center"></div>
+            <div id="carouselproduct" class="carousel slide">
+                <ol class="carousel-indicators"></ol>
+                <div class="carousel-inner">
+                    <div class="item active">
+                        <div class="row"></div>
+                    </div>
+                </div><a class="left carousel-control" href="#carouselproduct" data-slide="prev"><i class="fa fa-angle-left"></i></a><a class="right carousel-control" href="#carouselproduct" data-slide="next"><i class="fa fa-angle-right"></i></a></div>
+        </div>
+    </section>
+</div>

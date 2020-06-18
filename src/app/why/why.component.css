@@ -1,0 +1,32 @@
+.clsHighLight {
+    content: "";
+    width: 75%;
+    height: 200px;
+    border: 2px dashed #40db4d;
+    border-left-color: transparent;
+    border-bottom-color: transparent;
+    position: absolute;
+    top: 127px;
+    color: #1fc41f;
+    left: 450px;
+}
+
+.clsGreenColor:before {
+    border: 2px dashed #2ddf34;
+    border-left-color: transparent;
+    border-bottom-color: transparent;
+}
+
+.clsGreenColor {
+    color: #1fc41f;
+}
+
+.clsnoColor {
+    color: #dedede;
+}
+
+.clsnoColor:before {
+    border: 2px dashed #dedede;
+    border-left-color: transparent;
+    border-bottom-color: transparent;
+}

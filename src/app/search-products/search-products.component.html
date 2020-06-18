@@ -1,0 +1,17 @@
+<div>
+  <section id="product-page">
+      <div class="container">
+          <div class="row">
+              <div class="col-md-4 col-sm-6 col-xs-12"  *ngFor="let product of productsList">
+                  <div class="product" (dblclick)="ShowProductInfo(product)">
+                      <img src="{{product.image_thumb}}" alt="{{product.image_thumb}}" class="img-responsive">
+                      <div class="product-text"><span class="medium-head">
+                         {{product.name}}
+                        </span><span class="newarr-prices">₹   {{product.onsale_price}}</span><span> | <del>Rs. {{product.price}}</del> | 1 Kg</span>
+                        <span class="button"><button class="change-default">Add to cart</button></span></div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
+</div>

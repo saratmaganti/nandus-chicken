@@ -1,0 +1,116 @@
+<div>
+    <section id="creadcrumb">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
+                    <h3 class="bold subheader-heading">Billing Details</h3>
+                    <div class="breadcrumbs" aria-label="Breadcrumb">
+                        <ul>
+                            <li><a href="">Home</a></li>
+                            <li aria-current="page">Billing Address</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12">
+                    <div class="row">
+                        <div class="col-md-4 col-sm-6 col-lg-4 col-xs-12">
+                            <div class="sat-div"><img class="sat-img float" src="assets/images/satisfaction/1.png"><span class="sat-span">No Hormones, Steroid’s or Antibiotic Residue</span></div>
+                        </div>
+                        <div class="col-md-4 col-sm-6 col-lg-4 col-xs-12">
+                            <div class="sat-div"><img class="sat-img float" src="assets/images/satisfaction/3.png"><span class="sat-span">Hygienically cleaned<br> and Cut</span></div>
+                        </div>
+                        <div class="col-md-4 col-sm-6 col-lg-4 col-xs-12">
+                            <div class="sat-div"><img class="sat-img float" src="assets/images/satisfaction/2.png"><span class="sat-span">Fresh, Healthy and <br>Tasty</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="address-details">
+        <div class="container">
+            <div class="row">
+                <h3 class=""><b>Personal Details</b></h3>
+            </div>
+            <div class="row" style="margin-bottom: 10px;">
+                <div class="col-md-6">
+                    <label for="firstName">First name*</label>
+                    <input type="text" class="form-control" id="firstName" #firstName="ngModel" [(ngModel)]="userFirstName" placeholder="" value="" required="">
+                </div>
+                <div class="col-md-6">
+                    <label for="lastName">Last name*</label>
+                    <input type="text" class="form-control" id="lastName" #lastName="ngModel" [(ngModel)]="userLastName" placeholder="" value="" required="">
+                </div>
+            </div>
+            <div class="row" style="    margin-bottom: 10px;">
+                <div class="col-md-6">
+                    <label for="CustomerEmail">Customer Email*</label>
+                    <input type="text" class="form-control" id="CustomerEmail" #CustomerEmail="ngModel" [(ngModel)]="userEmail" placeholder="" value="" required="">
+                </div>
+                <div class="col-md-6">
+                    <label for="CustomerMobile">Customer Mobile*</label>
+                    <input type="text" class="form-control" id="CustomerMobile" #CustomerMobile="ngModel" [(ngModel)]="userMobile" placeholder="" value="" required="">
+                </div>
+            </div>
+            <div class="row" style="    margin-bottom: 10px;">
+                <div class="col-md-6">
+                    <label for="Address1">Address 1*</label>
+                    <input type="text" class="form-control" id="Address1" #Address1="ngModel" [(ngModel)]="userAddress1" placeholder="" value="" required="">
+                </div>
+                <div class="col-md-6">
+                    <label for="Address2">Address 2</label>
+                    <input type="text" class="form-control" id="Address2" #Address2="ngModel" [(ngModel)]="userAddress2" placeholder="" value="" required="">
+                </div>
+            </div>
+            <div class="row" style="    margin-bottom: 10px;">
+                <div class="col-md-6">
+                    <label for="Company">Company</label>
+                    <input type="text" class="form-control" id="Company" #Company="ngModel" [(ngModel)]="userCompany" placeholder="" value="" required="">
+                </div>
+                <div class="col-md-6">
+                    <label for="City">City*</label>
+                    <input type="text" class="form-control" id="City" #City="ngModel" [(ngModel)]="userCity" placeholder="" value="" required="">
+                </div>
+            </div>
+            <div class="row" style="    margin-bottom: 10px;">
+                <div class="col-md-6">
+                    <label for="Zip">Zip*</label>
+                    <input type="text" class="form-control" id="Zip" #Zip="ngModel" [(ngModel)]="userZip" placeholder="" value="" required="">
+                </div>
+                <div class="col-md-6">
+                    <label for="Country">Country*</label>
+                    <select class="form-control" id="Country" #Country="ngModel" [(ngModel)]="userCountry" (change)="getCountryDetails($event.target.value)">
+                        <option value="">Select</option>
+                        <option *ngFor="let country of countries" value={{country.id}}>
+                            {{country.name}}
+                        </option>
+                    </select>
+                </div>
+            </div>
+            <div class="row" style="    margin-bottom: 10px;">
+                <div class="col-md-6">
+                    <label for="State">State*</label>
+                    <select class="form-control" id="State" #State="ngModel" [(ngModel)]="userState">
+                        <option value="">Select</option>
+                        <option *ngFor="let state of states" value={{state.id}}>
+                            {{state.name}}
+                        </option>
+                    </select>
+                </div>
+
+            </div>
+            <!-- <div class="row" style="    margin-bottom: 10px;">
+                <div class="col-md-6">
+                    <div> <input type="checkbox"> My delivery and billing addresses are the same </div>
+                    <div> <input type="checkbox"> I have read and agree to the Privacy Policy </div>
+                </div>
+            </div> -->
+            <div class="row" style="margin-bottom: 10px;">
+                <div class="col-md-6">
+                    <input type="button" class="btn" style="width: 30%; color: white; background: #69c131; " (click)="SaveAddress()" value="Save and proceed">
+                </div>
+            </div>
+        </div>
+    </section>
+
+</div>

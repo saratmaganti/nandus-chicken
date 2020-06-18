@@ -1,0 +1,153 @@
+<div>
+    <section id="creadcrumb">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
+                    <h3 class="bold subheader-heading">CART</h3>
+                    <div class="breadcrumbs" aria-label="Breadcrumb">
+                        <ul>
+                            <li><a href="">Home</a></li>
+                            <li aria-current="page">Cart</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12" *ngIf="cartInformation">
+                    <div class="row">
+                        <div class="col-md-4 col-sm-6 col-lg-4 col-xs-12">
+                            <div class="sat-div"><img class="sat-img float" src="assets/images/satisfaction/1.png"><span class="sat-span">No Hormones, Steroid’s or Antibiotic Residue</span></div>
+                        </div>
+                        <div class="col-md-4 col-sm-6 col-lg-4 col-xs-12">
+                            <div class="sat-div"><img class="sat-img float" src="assets/images/satisfaction/3.png"><span class="sat-span">Hygienically cleaned<br> and Cut</span></div>
+                        </div>
+                        <div class="col-md-4 col-sm-6 col-lg-4 col-xs-12">
+                            <div class="sat-div"><img class="sat-img float" src="assets/images/satisfaction/2.png"><span class="sat-span">Fresh, Healthy and <br>Tasty</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="container" *ngIf="!cartInformation">
+            <div align="center">
+                <img src="assets/images/logo/OppsLogo.png" style="width: 100px;
+                height: 100px;
+                margin-top: 28px;" alt="Image">
+                <h3 style="color: black;">
+                    OOPS !!! Your Cart is Empty
+                </h3>
+                <input type="button" class="btn btn-success clsBtnShop" value="GO TO SHOP NOW">
+            </div>
+            <div class="row" align="center">
+                <div class="col-lg-1 col-sm-1 col-md-1"></div>
+                <div class="col-lg-10 col-sm-10 col-md-10 clsSubscribe" style=" margin-bottom: 18px; ">
+                    <div class="clsSignUpText col-lg-4 col-sm-4 col-md-4" style=" float: left;">
+                        <span style="color: black; "> <b style="margin-left: 15px; ">Sign up for news and <span style="color: #69c131; ">Offers</span></b>
+                        </span><br>
+                        <span style="font-size: smaller;">you may unsubscribe at any time</span>
+                    </div>
+
+                    <div class="clsSignUpText searchBoxSubscribe col-lg-6 col-sm-6 col-md-6 pull-right">
+                        <input type="text" placeholder=" Enter your email." name="search">
+                        <button type="submit"><i class="fa fa-search"></i></button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <section id="product-details " *ngIf="cartInformation">
+        <div class="container ">
+            <div class="row ">
+                <table class="table table-bordered ">
+                    <thead>
+                        <tr>
+                            <th scope="col " style="text-align:center ">
+                                Image
+                            </th>
+                            <th scope="col " style="text-align:center ">
+                                Product Name
+                            </th>
+                            <th scope="col " style="text-align:center ">
+                                Qnty
+                            </th>
+                            <th scope="col " style="text-align:center ">
+                                Price
+                            </th>
+                            <th scope="col " style="text-align:center ">
+                                Total
+                            </th>
+                            <th scope="col " style="text-align:center ">
+                                Delete
+                            </th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr *ngFor="let item of cartInformation " align="center ">
+                            <td>
+                                <img src="{{item.image_thumb}} " style="width: 80px; height: 80px; " alt="Image ">
+                            </td>
+                            <td>
+                                {{item.product_name}}
+                            </td>
+                            <td>
+                                <button class="col-2 btn btn-secndary " (click)="DecrementPrecheckQty(item) ">-</button> {{item.product_qty}}
+                                <button class="col-2 btn btn-secondary " (click)="IncrementPrecheckQty(item) ">+</button>
+
+                            </td>
+                            <td>
+                                {{item.price}}
+                            </td>
+                            <td>
+                                {{item.product_price}}
+                            </td>
+                            <td>
+                                <span class="glyphicon glyphicon-trash " (click)="RemoveCart(item.product_id) "></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="4 "><b class="pull-right ">Total:  </b> </td>
+                            <td style="text-align: center; ">
+                                <span> {{totalCart$[0].total_amount}} </span>
+                            </td>
+                        </tr>
+                        <tr *ngIf="coupon_amnt ">
+                            <td colspan="4 "><b class="pull-right ">Discount:  </b> </td>
+                            <td style="text-align: center; ">
+                                <span> {{coupon_amnt}} </span>
+                            </td>
+                        </tr>
+                        <tr *ngIf="grand_total ">
+                            <td colspan="4 "><b class="pull-right ">Final amt after discount:  </b> </td>
+                            <td style="text-align: center; ">
+                                <span> {{grand_total}} </span>
+                            </td>
+                        </tr>
+                    </tbody>
+
+                </table>
+            </div>
+            <div class="row " style=" border: 1px solid lightgray; ">
+                <div class="col-sm-12 col-md-12 col-lg-12 " style="text-align:center; border-bottom: 1px solid lightgray; margin-bottom: 24px; margin-top: 8px; ">
+                    <b> Use Coupon Code </b>
+                </div>
+                <div class="col-sm-12 col-md-12 col-lg-12 " style="margin-bottom: 10px; ">
+                    <div class="col-sm-5 col-md-5 col-lg-5 ">
+                        <b class="pull-right " style=" padding-top: 6px; ">  Enter your coupon here: </b>
+                    </div>
+                    <div class="col-sm-3 col-md-3 col-lg-3 ">
+                        <input type="text " class="form-control " style="border-radius: 10px; " #coupon="ngModel" id="couponVal " [(ngModel)]="couponCode ">
+                    </div>
+                    <div class="col-sm-4 col-md-4 col-lg-4 ">
+                        <input type="button " class="btn " style="width: 33%; " (click)="ApplyCoupon() " value="Apply Coupon ">
+                        <input type="button " class="btn " style="width: 30%; color: white; background: #69c131; margin-left: 8px; " (click)="NavigatetoAddresss() " value="Check Out ">
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+</div>

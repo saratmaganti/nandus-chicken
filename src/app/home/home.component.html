@@ -1,0 +1,299 @@
+<app-slider></app-slider>
+<section id="satisfaction">
+  <div class="container">
+    <div class="row satisfaction-row">
+      <div class="col-sm-6 col-xs-6 col-md-3 col-lg-3">
+        <div class="sat-div"><img alt="" class="sat-img" src="assets/images/satisfaction/1.png"><span
+            class="sat-span">No Hormones, Steroid’s or Antibiotic Residue</span></div>
+      </div>
+      <div class="col-sm-6 col-xs-6 col-md-3 col-lg-3">
+        <div class="sat-div"><img alt="" class="sat-img" src="assets/images/satisfaction/2.png"><span
+            class="sat-span">Fresh, Healthy and Tasty</span></div>
+      </div>
+      <div class="col-sm-6 col-xs-6 col-md-3 col-lg-3">
+        <div class="sat-div"><img alt="" class="sat-img" src="assets/images/satisfaction/3.png"><span
+            class="sat-span">Hygienically cleaned and Cut</span></div>
+      </div>
+      <div class="col-sm-6 col-xs-6 col-md-3 col-lg-3">
+        <div class="sat-div"><img alt="" class="sat-img" src="assets/images/satisfaction/4.png"><span
+            class="sat-span">Wholesome and Nutrient Rich Feed</span></div>
+      </div>
+    </div>
+    <div style="display: flex; justify-content: center;"></div>
+  </div>
+</section>
+<div>
+  <div *ngIf="!showInfo" style="display: flex; justify-content: center;"><button (click)="changeDisplayInfo()"
+      style="border: 1px solid rgb(171, 37, 39); border-radius: 5px; background: white;">Know How <span
+        class="caret"></span></button></div>
+  <section id="creadcrumb">
+    <div class="container">
+      <div class="row"></div>
+    </div>
+  </section>
+  <section id="product-page" class="product--page" *ngIf="showInfo">
+    <div class="container product--page-container">
+      <div class="product--page-close"><span class="show--mobile">Know How</span>
+        <div class="close-lic-way" (click)="changeDisplayInfo()">×</div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="main-timeline">
+            <div class="timeline">
+              <a href="#" class="timeline-content">
+                <div class="timeline-icon"><img src="assets/images/aboutus/img1.png" class="img-responsive"></div>
+                <div class="timeline-year"><span>1</span></div>
+                <div class="inner-content">
+                  <h3 class="title">Since 1963</h3>
+                  <p class="description">We have been poultry farmers for over 50 years. We are not traders buying from
+                    other sources. We are farmers bringing our products to the market, for you!</p>
+                </div>
+              </a>
+            </div>
+            <div class="timeline">
+              <a href="#" class="timeline-content">
+                <div class="timeline-icon"><img src="assets/images/aboutus/img2.png" class="pull-right img-responsive">
+                  <div class="clearfix"></div>
+                </div>
+                <div class="timeline-year"><span>2</span></div>
+                <div class="inner-content">
+                  <h3 class="title">Farm to Fork</h3>
+                  <p class="description">We hygienically transport chicken from our farms to the stores every morning
+                    while maintaining end to end temperature control.</p>
+                </div>
+              </a>
+            </div>
+            <div class="timeline">
+              <a href="#" class="timeline-content">
+                <div class="timeline-icon"><img src="assets/images/aboutus/img3.png" class="img-responsive"></div>
+                <div class="timeline-year"><span>3</span></div>
+                <div class="inner-content">
+                  <h3 class="title">Certified by Veterinarians</h3>
+                  <p class="description">We have a team of veterinarians who constantly monitor the health of the
+                    chicken to ensure the best quality reached you.</p>
+                </div>
+              </a>
+            </div>
+            <div class="timeline">
+              <a href="#" class="timeline-content">
+                <div class="timeline-icon"><img src="assets/images/aboutus/img4.png" class="pull-right img-responsive">
+                  <div class="clearfix"></div>
+                </div>
+                <div class="timeline-year"><span>4</span></div>
+                <div class="inner-content">
+                  <h3 class="title">No Hormones, Steroids, Antibiotic Residue</h3>
+                  <p class="description">We source the best ingredients to manufacture nutrient rich feed at our feed
+                    mills, which is used grow chicken at our own farms to ensure chicken is free of steroids, hormones
+                    and antibiotic residue.</p>
+                </div>
+              </a>
+            </div>
+            <div class="timeline">
+              <a href="#" class="timeline-content">
+                <div class="timeline-icon"><img src="assets/images/aboutus/img6.png" class="pull-right img-responsive">
+                  <div class="clearfix"></div>
+                </div>
+                <div class="timeline-year"><span>5</span></div>
+                <div class="inner-content">
+                  <h3 class="title">Wholesome Nutrient Rich Feed</h3>
+                  <p class="description">We source the best ingredients to manufacture nutrient rich feed at our feed
+                    mills, which is used grow chicken at our own farms to ensure chicken is free of steroids, hormones
+                    and antibiotic residue.</p>
+                </div>
+              </a>
+            </div>
+            <div class="timeline">
+              <a href="#" class="timeline-content">
+                <div class="timeline-icon"><img src="assets/images/aboutus/img5.png" class="img-responsive"></div>
+                <div class="timeline-year"><span>6</span></div>
+                <div class="inner-content">
+                  <h3 class="title">Halal Certified</h3>
+                  <p class="description">The halal process takes place at our plant, which is then hygienically cleaned
+                    and packed and sent to stores.</p>
+                </div>
+              </a>
+            </div>
+            <div class="timeline border">
+              <a href="#" class="timeline-content">
+                <div class="timeline-icon"><img src="assets/images/aboutus/img7.png" class="img-responsive"></div>
+                <div class="timeline-year"><span>7</span></div>
+                <div class="inner-content">
+                  <h3 class="title">Fresh, Healthy &amp; Tasty</h3>
+                  <p class="description">Who said health and taste cannot go hand in hand. We at Nandu’s strive to
+                    ensure your family gets the best nutrition without compromising on the health and taste.</p>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="display: flex; justify-content: center;">
+        <button (click)="changeDisplayInfo()" class="product--page-close--btn"
+          style="border: 1px solid rgb(171, 37, 39); border-radius: 5px; background: white;"> Close</button>
+      </div>
+    </div>
+  </section>
+  <app-categories></app-categories>
+  <section id="promos">
+    <div class="container">
+      <h3 class="text-center">OFFERS AND COMBOS</h3>
+      <div class="row">
+        <div class="col-md-6 col-sm-12 col-xs-12 col-lg-6">
+          <div class=""><img alt="" class="promo-img"
+              src="https://s3.ap-south-1.amazonaws.com/mumbai.urbanpiper.com/media/bizmedia/2019/10/04/Curry_Cut_Without_Skin__6_Eggs_COMPRESSED.jpg">
+            <div class="overlay2">
+              <div class="text">
+                <a href="/productDetails"><img alt="" src="assets/images/promo/icon-1.png"></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-sm-12 col-xs-12 col-lg-6">
+          <div class="">
+            <div class="col-sm-6 col-xs-12">
+              <div class=""><img alt="" class="combo-img"
+                  src="https://s3.ap-south-1.amazonaws.com/mumbai.urbanpiper.com/media/bizmedia/2019/10/04/Curry_Cut_Without_Skin__Drumsticks_COMPRESSED.jpg">
+                <div class="overlay">
+                  <div class="text">
+                    <a href="/productDetails"><img alt="" src="assets/images/promo/icon-1.png"></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6 col-xs-12">
+              <div class=""><img alt="" class="combo-img"
+                  src="https://s3.ap-south-1.amazonaws.com/mumbai.urbanpiper.com/media/bizmedia/2019/10/04/Curry_Cut_Without_Skin__Breast_Boneless_COMPRESSED.jpg">
+                <div class="overlay">
+                  <div class="text">
+                    <a href="/productDetails"><img alt="" src="assets/images/promo/icon-1.png"></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6 col-xs-12">
+              <div class=""><img alt="" class="combo-img"
+                  src="https://s3.ap-south-1.amazonaws.com/mumbai.urbanpiper.com/media/bizmedia/2019/10/04/PartyPack-SesameChickenWings_COMPRESSED.jpg">
+                <div class="overlay">
+                  <div class="text">
+                    <a href="/productDetails"><img alt="" src="assets/images/promo/icon-1.png"></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6 col-xs-12">
+              <div class=""><img alt="" class="combo-img"
+                  src="https://s3.ap-south-1.amazonaws.com/mumbai.urbanpiper.com/media/bizmedia/2019/10/04/PartyPack-Guntur_Chilly_Chicken_COMPRESSED.jpg">
+                <div class="overlay">
+                  <div class="text">
+                    <a href="/productDetails"><img alt="" src="assets/images/promo/icon-1.png"></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-12 col-sm-12 col-md-12 col-xs-12 text-center">
+          <button id="off" (click)="ViewAllProducts()">View All</button>
+        </div>
+      </div>
+    </div>
+  </section>
+  <app-bestsaleproducts></app-bestsaleproducts>
+  <section id="waystoorder">
+    <div class="container">
+      <h3 id="ways-h3">4 ways to order</h3>
+      <div class="col-md-12 col-lg-12 col-sm-12">
+        <ul class="order-ways">
+          <li><img alt="" src="assets/images/waystoorder/icon-1.png">
+            <p class="ways-p">1. Visit Store</p>
+          </li>
+          <li><img alt="" src="assets/images/waystoorder/icon-2.png">
+            <p class="ways-p">2. Order Online</p>
+          </li>
+          <li><img alt="" src="assets/images/waystoorder/icon-3.png">
+            <p class="ways-p">3. Call</p>
+          </li>
+          <li><img alt="" src="assets/images/waystoorder/4.png">
+            <p class="ways-p">4. Download App</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  <section id="authentic">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 col-lg-6 col-sm-6 col-xs-12">
+          <div class="card">
+            <div class="card-image"><img alt="" src="assets/images/card/1.png" class="img-responsive"></div>
+            <div class="card-content">
+              <h3 class="aut">Nandu Authentic Food</h3>
+              <p class="card-p">To make chicken feed, we have our own poultry feed mills that produce cereals, coarse
+                and fine powders, bran, molasses, and liquids. This superior quality feed is free from steroids and
+                hormones.</p>
+              <br>
+              <br>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-6 col-sm-6 col-xs-12">
+          <div class="card rec">
+            <div class="card-image"><img alt="" src="assets/images/card/2.png" class="img-responsive"></div>
+            <div class="card-content" style="height: 208.4px;">
+              <h3 class="aut">Recipes</h3>
+              <p class="card-p">Whats more pleasurable than the comfort of a home cooked meal? Variety doesn’t
+                necessarily mean dining at restaurants, you can now be your own masterchef with Nandu;s Handpicked,
+                quick and easy recipes. Spruce up your sunday cooking or try something exciting for your kinds after
+                school snack.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="aboutus">
+    <div class="container">
+      <h3 class="about-h">About Us</h3>
+      <div class="row margin-top-20">
+        <div class="col-sm-3 text-center"><img alt="" class="abt-img" src="assets/images/aboutus/1.png">
+          <h4 class="abt-head">Since 1963</h4>
+          <p class="abt-p">Nandu’s is a part of the Nanda Group which was founded in the year 1963. We revolutionized
+            the poultry industry through process innovation and advanced technology while staying true to our motto of
+            ‘All Healthy All Fresh’</p>
+        </div>
+        <div class="col-sm-3 text-center"><img alt="" class="abt-img" src="assets/images/aboutus/2.png">
+          <h4 class="abt-head">Farm to fork</h4>
+          <p class="abt-p">To keep our promise of offering fresh meat, we operate our own feed mill, hatchery, breeding
+            farm, processing unit, and retail stores.</p>
+        </div>
+        <div class="col-sm-3 text-center"><img alt="" class="abt-img" src="assets/images/aboutus/3.png">
+          <h4 class="abt-head">Chicken Certified by Veterinarians</h4>
+          <p class="abt-p">The chicken raised at our poultry farms are always monitored for any infections and certified
+            by veterinarians before reaching your plate.</p>
+        </div>
+        <div class="col-sm-3 text-center"><img alt="" class="abt-img" src="assets/images/aboutus/4.png">
+          <h4 class="abt-head">No Hormones, Steroids or Antibiotic Residue</h4>
+          <p class="abt-p">Our chicken is 100% traceable without injecting steroids, hormones or antibiotic residue
+            offering customers most hygienic and safe products.</p>
+        </div>
+      </div>
+      <div class="row margin-top-20">
+        <div class="col-sm-4 text-center"><img alt="" class="abt-img" src="assets/images/aboutus/5.png">
+          <h4 class="abt-head">Halal Certified</h4>
+          <p class="abt-p">We offer chicken as per the guidelines set by the Islamic Sharia Law and our products safe
+            for consumption.</p>
+        </div>
+        <div class="col-sm-4 text-center"><img alt="" class="abt-img" src="assets/images/aboutus/6.png">
+          <h4 class="abt-head">Tasty and Healthy</h4>
+          <p class="abt-p">We source the best ingredients to produce nutrient-rich feed at our feed mills making sure
+            that the chicken that you buy is healthy.</p>
+        </div>
+        <div class="col-sm-4 text-center"><img alt="" class="abt-img" src="assets/images/aboutus/7.png">
+          <h4 class="abt-head">Asolute Freshness</h4>
+          <p class="abt-p">We offer high-quality poultry products directly to customers adhering to strict global
+            guidelines.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

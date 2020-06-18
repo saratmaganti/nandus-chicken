@@ -1,0 +1,50 @@
+.clsBtnShop {
+    width: 12%;
+    font-size: smaller;
+    margin-bottom: 16px;
+}
+
+.clsSubscribe {
+    background: #f1f1f1;
+}
+
+.clsSignUpText {
+    margin-bottom: 24px;
+    margin-top: 28px;
+    margin-left: 12px;
+}
+
+div.searchBoxSubscribe input[type=text] {
+    padding: 10px;
+    font-size: 10px;
+    border: 1px solid lightgray;
+    float: left;
+    width: 80%;
+    background: white;
+    border-bottom-left-radius: 22px;
+    border-top-left-radius: 22px;
+}
+
+div.searchBoxSubscribe button {
+    float: left;
+    width: 8%;
+    padding: 10px;
+    background: #4CAF50;
+    color: white;
+    font-size: 10px;
+    border: 1px solid lightgray;
+    border-left: none;
+    cursor: pointer;
+    border-bottom-right-radius: 22px;
+    border-top-right-radius: 22px;
+}
+
+div.searchBoxSubscribe button:hover {
+    background: #0b7dda;
+}
+
+div.searchBoxSubscribe::after {
+    content: "";
+    clear: both;
+    display: table;
+}

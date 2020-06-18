@@ -1,0 +1,15 @@
+<div class="product handIcon">
+    <img src="{{product.image_thumb}}" (click)="ShowProductInfo(product)" alt="{{product.image_thumb}}" class="img-responsive">
+    <div class="product-text"><span class="medium-head">
+     {{product.name}}
+    </span><span class="newarr-prices">₹   {{product.onsale_price}}</span><span> | <del>Rs. {{product.price}}</del> | 1 Kg</span>
+        <div class="wish">
+            <span class="">
+        <button class="change-default" (click)="AddtoWhishList(product)">Add to WhishList</button>
+      </span>
+            <!-- <span class="button">wishbtnProd
+        <button class="change-default">Add to cart</button>
+        </span> -->
+        </div>
+    </div>
+</div>

@@ -1,0 +1,23 @@
+<section id="explorebycategory">
+    <div class="container">
+        <div class="category">
+            <h3 id="h3_cat">EXPLORE BY CATEGORY</h3>
+        </div>
+        <div class="resCarousel" data-items="2-3-4-5" data-slide="5" data-speed="900" data-interval="4000" data-load="3" data-animator="lazy">
+            <div class="resCarousel-inner" id="eventLoad" style="display: flex; justify-content: space-around;">
+                <div class="item" *ngFor="let category of categories">
+                    <div class="tile">
+                        <div class="item-hover circle effect1">
+                            <a class="handIcon" (click)="GetProductsByCategoryId(category)">
+                                <div class="spinner"></div>
+                                <div class="img"><img alt="d" src="{{category.image}}">
+                                </div>
+                            </a>
+                        </div>
+                        <h3 class="textcenter">{{category.name}}</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

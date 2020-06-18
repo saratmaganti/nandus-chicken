@@ -1,0 +1,34 @@
+<section id="newarrivals">
+    <div class="container">
+        <div class="head navontop"><span id="h3">BEST SELLERS</span></div>
+        <div id="carouselbestseller" class="carousel slide">
+            <ol class="carousel-indicators"></ol>
+            <div class="carousel-inner">
+                <div class="item active">
+                    <div class="row">
+                        <div class="col-sm-3" *ngFor="let product of productsInfo">
+                            <div class="handIcon thumbnail">
+                                <img alt="{{product.image_thumb}}" (click)="ShowProductInfo(product)" src="{{product.image_thumb}}">
+                                <span class="bold-head">{{product.name}}</span>
+                                <span><a class="change-color"></a></span>
+                                <span class="newarr-prices">₹{{product.onsale_price}}</span>
+                                <span> | </span>
+                                <del>Rs.
+                  {{product.price}}</del>
+                                <div class="wish">
+                                    <span class="button">
+                <button class="change-default" (click)="AddtoWhishList(product)">Add to WhishList</button>
+              </span>
+                                    <!-- <span class="button">
+                  <button class="change-default">Add to cart</button> wishBtn
+                 
+                </span> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

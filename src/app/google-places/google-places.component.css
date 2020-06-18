@@ -1,0 +1,10 @@
+.google-places-autocomplete__input{
+    width: 100%;
+    padding: 10px;
+    border: none;
+    margin-bottom: 2px;
+    box-shadow: 0 1px 16px 0 rgba(0, 0, 0, 0.09);
+    background-color: -internal-light-dark-color(white, black);
+    margin: 0;
+    font: inherit;
+}

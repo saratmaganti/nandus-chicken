@@ -1,0 +1,269 @@
+<div>
+    <section>
+        <img src="assets/images/profile/banner-img.jpg" width="100%" class="img-responsive" alt="">
+    </section>
+    <section id="profile">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 col-xs-12">
+                    <div class="media">
+                        <a class="pull-left" href=" ">
+                            <!-- <img *ngIf="!(userInfo.Image)" class="media-object" src="assets/images/profile/profile-img.jpg" alt=""> -->
+                            <img src="{{userInfo.image}}" width="100%" class="img-responsive" alt="">
+
+                        </a>
+                        <div class="media-body col-md-6 no-padding">
+                            <h3 class="media-heading">{{userInfo.customer_name}} </h3>
+                            <p *ngIf="userInfo.customer_email"><span>Email</span>{{userInfo.customer_email}}</p>
+                            <p *ngIf="userInfo.customer_mobile"><span>Mobile</span> {{userInfo.customer_mobile}}</p>
+                        </div>
+                        <div class="col-md-3 col-xs-9 pull-right no-padding">
+                            <div class="your-cart">
+                                <h3>Your Cart</h3>
+                                <h1>{{ItemsCount}}</h1>
+                            </div>
+                        </div>
+                        <div class="col-md-1 col-xs-3 pull-right text-center text-gray" (click)="Logout()">
+                            <!-- <a><i
+                  class="fa fa-pencil"></i><br>Edit</a> -->
+                            <a href="">
+                                <i class="fa fa-sign-out "></i>
+                                <h4>Logout</h4>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Demo header-->
+    <!-- Demo header-->
+    <section class="profile-tab">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 col-xs-12 media"></div>
+                <div class="col-xs-3">
+                    <!-- required for floating -->
+                    <!-- Nav tabs -->
+                    <ul class="nav nav-tabs tabs-left">
+                        <li role="presentation" [ngClass]="{active: isActive('Orders')}" (click)="ActivateTab('Orders')">
+                            <a href="" aria-controls="orders" role="tab" data-toggle="tab">Orders</a>
+                        </li>
+                        <li role="presentation" [ngClass]="{active: isActive('Address')}" (click)="ActivateTab('Address')">
+                            <a href="" aria-controls="messages" role="tab" data-toggle="tab">Address</a>
+                        </li>
+                        <li role="presentation" [ngClass]="{active: isActive('ChangePwd')}" (click)="ActivateTab('ChangePwd')">
+                            <a href="" aria-controls="ChangePwd" role="tab" data-toggle="tab">Change Password</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-xs-9">
+                    <!-- Tab panes -->
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="home">Home Tab.</div>
+                        <div class="tab-pane" id="profile">Profile Tab.</div>
+                        <div class="tab-pane" id="messages">Messages Tab.</div>
+                        <div class="tab-pane" id="settings">Settings Tab.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="profile-tab">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="tab" role="tabpanel">
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li role="presentation" [ngClass]="{active: isActive('Orders')}" (click)="ActivateTab('Orders')">
+                                <p href="" aria-controls="orders" role="tab" data-toggle="tab">Orders</p>
+                            </li>
+                            <li role="presentation" [ngClass]="{active: isActive('Address')}" (click)="ActivateTab('Address')">
+                                <p href="" aria-controls="messages" role="tab" data-toggle="tab">Address</p>
+                            </li>
+                            <li role="presentation" [ngClass]="{active: isActive('ChangePwd')}" (click)="ActivateTab('ChangePwd')">
+                                <p href="" aria-controls="ChangePwd" role="tab" data-toggle="tab">Change Password</p>
+                            </li>
+                        </ul>
+                        <div class="tab-content tabs">
+                            <div role="tabpanel" class="tab-pane fade in" [ngClass]="{active: isActive('ChangePwd')}" id="Section1" style="height: 170px; padding-top: 10px;">
+                                <div class="row" style="margin-top: 10px;">
+                                    <div class="col-sm-4 col-md-4 col-lg-4">
+                                        <span class="pull-right">New Password </span>
+                                    </div>
+                                    <div class="col-sm-4 col-md-4 col-lg-4">
+                                        <input type="password" class="form-control" id="NewPassword" [(ngModel)]="newPassword">
+                                    </div>
+                                </div>
+                                <div class="row" style="margin-top: 10px;">
+                                    <div class="col-sm-4 col-md-4 col-lg-4">
+                                        <span class="pull-right">Old Password </span>
+                                    </div>
+                                    <div class="col-sm-4 col-md-4 col-lg-4">
+                                        <input type="password" class="form-control" id="OldPassword" [(ngModel)]="oldPassword">
+
+                                    </div>
+                                </div>
+                                <div class="col-sm-8 col-md-8 col-lg-8" style="margin-top: 10px;">
+                                    <button id="submit" name="register-button" (click)="ChangePassword()" class="flat-button chgPwd pull-right">Update</button>
+                                </div>
+                            </div>
+
+                            <div role="tabpanel" class="tab-pane fade in " [ngClass]="{active: isActive('Orders')}" id="Section2">
+                                <div class="table-responsive cart_info">
+                                    <div class="container">
+                                        <div class="row">
+                                            <table class="table table-bordered" *ngIf="customerOrders">
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col" style="text-align:center">
+                                                            Order ID
+                                                        </th>
+                                                        <th scope="col" style="text-align:center">
+                                                            Order Details
+                                                        </th>
+                                                        <th scope="col" style="text-align:center">
+                                                            Date
+                                                        </th>
+                                                        <th scope="col" style="text-align:center">
+                                                            Total Amount
+                                                        </th>
+                                                        <th scope="col" style="text-align:center">
+                                                            Total Discount
+                                                        </th>
+                                                    </tr>
+                                                </thead>
+
+                                                <tbody>
+                                                    <tr *ngFor="let item of customerOrders" align="center">
+                                                        <td>
+                                                            {{item.order_id}}
+                                                        </td>
+                                                        <td>
+                                                            <a href="{{item.file_path}}" download>
+                                                                <img src="assets/images/icons/pdfIcon.png" alt="Order Details" width="32" height="28">
+                                                            </a>
+                                                        </td>
+                                                        <td>
+                                                            {{item.date}}
+                                                        </td>
+                                                        <td>
+                                                            {{item.total_amount}}
+                                                        </td>
+                                                        <td>
+                                                            {{item.total_discount}}
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+
+                                            </table>
+
+                                            <div *ngIf="!customerOrders">
+                                                No Orders
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div role="tabpanel" class="container tab-pane fade in " [ngClass]="{active: isActive('Address')}" id="Section3">
+                                <div class="">
+                                    <div class="row">
+                                        <h3 class=""><b>Personal Details</b></h3>
+                                    </div>
+                                    <div class="row" style="margin-bottom: 10px;">
+                                        <div class="col-md-6">
+                                            <label for="firstName">First name*</label>
+                                            <input type="text" class="form-control" id="firstName" #firstName="ngModel" [(ngModel)]="userFirstName" placeholder="" value="" required="">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label for="lastName">Last name*</label>
+                                            <input type="text" class="form-control" id="lastName" #lastName="ngModel" [(ngModel)]="userLastName" placeholder="" value="" required="">
+                                        </div>
+                                    </div>
+                                    <div class="row" style="    margin-bottom: 10px;">
+                                        <div class="col-md-6">
+                                            <label for="CustomerEmail">Customer Email*</label>
+                                            <input type="text" class="form-control" id="CustomerEmail" #CustomerEmail="ngModel" [(ngModel)]="userEmail" placeholder="" value="" required="">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label for="CustomerMobile">Customer Mobile*</label>
+                                            <input type="text" class="form-control" id="CustomerMobile" #CustomerMobile="ngModel" [(ngModel)]="userMobile" placeholder="" value="" required="">
+                                        </div>
+                                    </div>
+                                    <div class="row" style="    margin-bottom: 10px;">
+                                        <div class="col-md-6">
+                                            <label for="Address1">Address 1*</label>
+                                            <input type="text" class="form-control" id="Address1" #Address1="ngModel" [(ngModel)]="userAddress1" placeholder="" value="" required="">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label for="Address2">Address 2</label>
+                                            <input type="text" class="form-control" id="Address2" #Address2="ngModel" [(ngModel)]="userAddress2" placeholder="" value="" required="">
+                                        </div>
+                                    </div>
+                                    <div class="row" style="    margin-bottom: 10px;">
+                                        <div class="col-md-6">
+                                            <label for="Company">Company</label>
+                                            <input type="text" class="form-control" id="Company" #Company="ngModel" [(ngModel)]="userCompany" placeholder="" value="" required="">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label for="City">City*</label>
+                                            <input type="text" class="form-control" id="City" #City="ngModel" [(ngModel)]="userCity" placeholder="" value="" required="">
+                                        </div>
+                                    </div>
+                                    <div class="row" style="    margin-bottom: 10px;">
+                                        <div class="col-md-6">
+                                            <label for="Zip">Zip*</label>
+                                            <input type="text" class="form-control" id="Zip" #Zip="ngModel" [(ngModel)]="userZip" placeholder="" value="" required="">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label for="Country">Country*</label>
+                                            <select class="form-control" id="Country" #Country="ngModel" [(ngModel)]="userCountry" (change)="getCountryDetails($event.target.value)">
+                                            <option value="">Select</option>
+                                            <option *ngFor="let country of countries" value={{country.id}}>
+                                                {{country.name}}
+                                            </option>
+                                        </select>
+                                        </div>
+                                    </div>
+                                    <div class="row" style="    margin-bottom: 10px;">
+                                        <div class="col-md-6">
+                                            <label for="State">State*</label>
+                                            <select class="form-control" id="State" #State="ngModel" [(ngModel)]="userState">
+                                            <option value="">Select</option>
+                                            <option *ngFor="let state of states" value={{state.id}}>
+                                                {{state.name}}
+                                            </option>
+                                        </select>
+                                        </div>
+
+                                    </div>
+                                    <div class="row" style="margin-bottom: 10px;">
+                                        <div class="col-md-6">
+                                            <input type="button" class="btn" style="width: 30%; color: white; background: #69c131; " (click)="SaveAddress()" value="Save and proceed">
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div role="tabpanel" class="tab-pane fade in " id="Section4">
+                                <h3>Section 4</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras nec urna aliquam, ornare eros vel, malesuada lorem. Nullam faucibus lorem at eros consectetur lobortis. Maecenas nec nibh congue, placerat sem id, rutrum velit.
+                                    Phasellus porta enim at facilisis condimentum. Maecenas pharetra dolor vel elit tempor pellentesque sed sed eros. Aenean vitae mauris tincidunt, imperdiet orci semper, rhoncus ligula. Vivamus scelerisque.</p>
+                            </div>
+                            <div role="tabpanel" class="tab-pane fade in " id="Section5">
+                                <h3>Section 5</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras nec urna aliquam, ornare eros vel, malesuada lorem. Nullam faucibus lorem at eros consectetur lobortis. Maecenas nec nibh congue, placerat sem id, rutrum velit.
+                                    Phasellus porta enim at facilisis condimentum. Maecenas pharetra dolor vel elit tempor pellentesque sed sed eros. Aenean vitae mauris tincidunt, imperdiet orci semper, rhoncus ligula. Vivamus scelerisque.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+</div>

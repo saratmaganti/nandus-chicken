@@ -1,0 +1,17 @@
+li {
+    list-style: none;
+}
+
+.clsLeft {
+    float: left;
+    padding-left: 34px;
+}
+
+li::before {
+    content: "\2022";
+    color: greenyellow;
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+}
