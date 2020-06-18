@@ -170,6 +170,7 @@ export class BillingAddressComponent implements OnInit {
   }
   preparePayload(UserAddressInfo) {
     this.cartDataService.getCartDetails().subscribe((data: any) => {
+      
       console.log(data);
     })
   }
