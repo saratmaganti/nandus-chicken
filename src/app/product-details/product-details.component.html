@@ -51,7 +51,7 @@
                         <!-- <input type="number" style="height: 30px;padding: 0 20px;text-align: center;" min="1" max="{{stockCount}}" value="{{qty}}"> -->
                         <button class="col-2 btn btn-secondary" (click)="IncrementQty()">+</button>
                     </div>
-                    <button class="cart-btn" [disabled]="!stockCount" (click)="AddItemtoCart(productInfo.id,qty)">Add to cart</button>
+                    <button class="cart-btn" [disabled]="!stockCount" (click)="AddItemtoCart(productInfo, qty)">Add to cart</button>
                 </div>
             </div>
         </div>

@@ -12,6 +12,8 @@ import { BillingAddressComponent } from './billing-address/billing-address.compo
 import { CertifiedComponent } from './certified/certified.component';
 import { CareersComponent } from './careers/careers.component';
 import { AuthenticFoodComponent } from './authentic-food/authentic-food.component';
+import { PaymentsSelectionComponent } from './payments-selection/payments-selection.component';
+import { PaymentStatusComponent } from './payment-status/payment-status.component';
 
 const routes: Routes = [
   {
@@ -59,10 +61,17 @@ const routes: Routes = [
     component: AuthenticFoodComponent
   },
   {
+    path: 'payment-modes',
+    component: PaymentsSelectionComponent
+  },
+  {
+    path: 'payment-status',
+    component: PaymentStatusComponent
+  },
+  {
     path: '',
     component: HomeComponent
   }
-  
 ];
 
 @NgModule({

@@ -103,9 +103,13 @@ export class ProductDetailsComponent {
   AddItemtoCart(product,quantity) {
     debugger;
     this.userId=sessionStorage.getItem('userKey');
+    console.log(product);
+   // sessionStorage.setItem('storeAddress', product);
+    sessionStorage.setItem('store_id', product.store_id);
+    
     if(this.userId)
     {
-      this.AddtoCart(this.userId,product,quantity);
+      this.AddtoCart(this.userId,product.id,quantity);
     }
     else{
       alert(" Please Login to add the product to the WishList");

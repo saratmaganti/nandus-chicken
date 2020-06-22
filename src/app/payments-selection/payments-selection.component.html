@@ -1,0 +1,26 @@
+<div>
+    <section id="creadcrumb">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-2"></div>
+                <div class="col-md-8">
+                    <h3 class="text-center">Select type of payment</h3>
+                    <div class="col-container">
+                        <div class="col" style="background:#36e25b" (click)="proceedPayment('cod')">
+                            <h3>Cash On Delivery</h3>
+                        </div>
+
+                        <div class="col" style="background:#3395ff" (click)="proceedPayment('razorpay')">
+                            <h3>Razor Pay</h3>
+                        </div>
+
+                        <div class="col" style="background:orange; display: none;" (click)="proceedPayment('paytm')">
+                            <h3>PayTm</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2"></div>
+            </div>
+        </div>
+    </section>
+</div>

@@ -33,6 +33,13 @@ export class ApiService {
     ).pipe(catchError(this.formatErrors));
   }
 
+  postForOrder(path: string, body: Object = {}): Observable<any> {
+    return this.http.post(
+      `${environment.api_url}${path}`,body, { headers: 
+        {'Content-Type':'application/json'} }
+    ).pipe(catchError(this.formatErrors));
+  }
+
   delete(path): Observable<any> {
     return this.http.delete(
       `${environment.api_url}${path}`

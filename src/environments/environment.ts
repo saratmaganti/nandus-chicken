@@ -5,6 +5,9 @@
 export const environment = {
   production: false,
   api_url: 'https://syndemos.com/nandu_v1/api/',
+  api_url_two: 'https://syndemos.com/nandu_v1/',
+  // api_url: 'https://localhost/nandu_v1/api/',
+  // api_url_two: 'https://localhost/nandu_v1/',
   api_key:'nandu@123',
   slider_url:'slider_list/format/json',
   category_url:'categorylist/format/json',

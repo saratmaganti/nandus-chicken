@@ -15,6 +15,6 @@ export interface Product {
     rating: number;
     store_id:string;
    error:string;
-    
+   stock: any;
   }
   

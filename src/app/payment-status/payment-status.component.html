@@ -1,0 +1,16 @@
+<div>
+    <section id="creadcrumb">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h3 [ngClass]="{'text-success': paymentStatus == 'true', 'text-danger': paymentStatus == 'false' }">
+                        {{ paymentStatusMessage }}
+                    </h3>
+                </div>
+                <div class="col-md-12">
+                    <input type="button" class="btn btn-success clsBtnShop" value="GO TO SHOP NOW" (click)="goToHome()">
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

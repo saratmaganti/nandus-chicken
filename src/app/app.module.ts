@@ -31,6 +31,8 @@ import { BillingAddressComponent } from './billing-address/billing-address.compo
 import { CertifiedComponent } from './certified/certified.component';
 import { CareersComponent } from './careers/careers.component';
 import { AuthenticFoodComponent } from './authentic-food/authentic-food.component';
+import { PaymentsSelectionComponent } from './payments-selection/payments-selection.component';
+import { PaymentStatusComponent } from './payment-status/payment-status.component';
 
 export function socialConfigs() {    
   const config = new AuthServiceConfig(    
@@ -41,7 +43,7 @@ export function socialConfigs() {
       },    
       {    
         id: GoogleLoginProvider.PROVIDER_ID,    
-        provider: new GoogleLoginProvider('561200483555-qpal3oll3o4qm1ku0eeeinde3njnp2bp.apps.googleusercontent.com')    
+        provider: new GoogleLoginProvider('AIzaSyC63FZRbURi3fYBTs5CZg8NcdgmnS2YLjo')    
       }    
     ]    
   );    
@@ -74,6 +76,8 @@ export function socialConfigs() {
     CertifiedComponent,
     CareersComponent,
     AuthenticFoodComponent,
+    PaymentsSelectionComponent,
+    PaymentStatusComponent,
   ],
   imports: [
     BrowserModule,
